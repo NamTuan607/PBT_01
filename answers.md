@@ -107,14 +107,14 @@ Câu A3 — Block vs Inline
 Câu A4 — Table
   
 1. Sự khác nhau giữa <thead>, <tbody>, <tfoot>
-  <thead> (Table Head)
+  - <thead> (Table Head)
   → Chứa phần tiêu đề của bảng (các cột)
   → Thường dùng với <th>
   → Ví dụ: Tên sản phẩm, Giá, Số lượng
-  <tbody> (Table Body)
+  - <tbody> (Table Body)
   → Chứa dữ liệu chính của bảng
   → Bao gồm nhiều dòng <tr> với <td>
-  <tfoot> (Table Footer)
+  - <tfoot> (Table Footer)
   → Chứa phần cuối bảng
   → Thường dùng để hiển thị tổng kết (tổng tiền, thống kê...)
 2. Tại sao KHÔNG NÊN dùng table để tạo layout?
