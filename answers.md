@@ -118,12 +118,12 @@ Câu A4 — Table
   → Chứa phần cuối bảng
   → Thường dùng để hiển thị tổng kết (tổng tiền, thống kê...)
 2. Tại sao KHÔNG NÊN dùng table để tạo layout?
-    Lý do 1: Sai mục đích (không semantic)
+   - Lý do 1: Sai mục đích (không semantic)
   Table dùng cho dữ liệu dạng bảng
   Dùng để layout làm Google hiểu sai cấu trúc trang → SEO kém
-    Lý do 2: Khó responsive
+   - Lý do 2: Khó responsive
   Table khó co giãn trên mobile
   Không linh hoạt như CSS (Flexbox, Grid)
-    Lý do 3: Code phức tạp, khó maintain
+   - Lý do 3: Code phức tạp, khó maintain
   Lồng nhiều <table>, <tr>, <td> → rối code
   Khó sửa, khó debug
