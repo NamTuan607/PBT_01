@@ -43,15 +43,15 @@ Trang web sử dụng quá nhiều thẻ <div> không có ý nghĩa (div soup), 
 - Thiếu thông tin mô tả (alt, semantic tags)
 → Kết quả: SEO kém
 2. Các lỗi semantic (ít nhất 4 lỗi)
- Lỗi 1: Dùng <div> thay vì <header>, <nav>, <footer>
+ - Lỗi 1: Dùng <div> thay vì <header>, <nav>, <footer>
 Không thể hiện rõ cấu trúc trang
- Lỗi 2: Menu không dùng <nav>
+ - Lỗi 2: Menu không dùng <nav>
 Google không biết đây là phần điều hướng
- Lỗi 3: Sản phẩm không dùng <article>
+ - Lỗi 3: Sản phẩm không dùng <article>
 Mỗi sản phẩm là nội dung độc lập → nên dùng <article>
- Lỗi 4: Tiêu đề không dùng heading (<h1>, <h2>)
+ - Lỗi 4: Tiêu đề không dùng heading (<h1>, <h2>)
 "iPhone 16 Pro" nên là heading để SEO nhận diện
- Lỗi 5: Ảnh không có alt
+ - Lỗi 5: Ảnh không có alt
 Google không hiểu nội dung ảnh
 3. Code đã sửa
   <header>
