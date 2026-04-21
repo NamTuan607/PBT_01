@@ -108,15 +108,15 @@ Câu A4 — Table
   
 1. Sự khác nhau giữa <thead>, <tbody>, <tfoot>
   - <thead> (Table Head)
-  → Chứa phần tiêu đề của bảng (các cột)
-  → Thường dùng với <th>
-  → Ví dụ: Tên sản phẩm, Giá, Số lượng
+  Chứa phần tiêu đề của bảng (các cột)
+  Thường dùng với <th>
+  Ví dụ: Tên sản phẩm, Giá, Số lượng
   - <tbody> (Table Body)
-  → Chứa dữ liệu chính của bảng
-  → Bao gồm nhiều dòng <tr> với <td>
+  Chứa dữ liệu chính của bảng
+  Bao gồm nhiều dòng <tr> với <td>
   - <tfoot> (Table Footer)
-  → Chứa phần cuối bảng
-  → Thường dùng để hiển thị tổng kết (tổng tiền, thống kê...)
+  Chứa phần cuối bảng
+  Thường dùng để hiển thị tổng kết (tổng tiền, thống kê...)
 2. Tại sao KHÔNG NÊN dùng table để tạo layout?
    - Lý do 1: Sai mục đích (không semantic)
   Table dùng cho dữ liệu dạng bảng
@@ -127,3 +127,99 @@ Câu A4 — Table
    - Lý do 3: Code phức tạp, khó maintain
   Lồng nhiều <table>, <tr>, <td> → rối code
   Khó sửa, khó debug
+
+Câu C1 — Thiết kế cấu trúc HTML
+
+<header> <!-- header: phần đầu trang, chứa logo + navigation -->
+    <nav> <!-- nav: khu vực điều hướng chính -->
+        <ul> <!-- ul: danh sách menu -->
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+        </ul>
+    </nav>
+</header>
+
+<nav aria-label="breadcrumb"> <!-- nav: điều hướng, breadcrumb là dạng navigation -->
+    <ol> <!-- ol: breadcrumb có thứ tự cấp bậc -->
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Điện thoại</a></li>
+        <li>iPhone 16</li>
+    </ol>
+</nav>
+
+<main> <!-- main: nội dung chính của trang -->
+
+    <section class="product-detail"> <!-- section: nhóm nội dung chi tiết sản phẩm -->
+
+        <section class="product-images"> <!-- section: khu vực ảnh sản phẩm -->
+            <figure> <!-- figure: chứa ảnh -->
+                <img src="#" alt="Ảnh sản phẩm"> <!-- img + alt: mô tả ảnh -->
+            </figure>
+            <figure><img src="#" alt="Ảnh sản phẩm"></figure>
+            <figure><img src="#" alt="Ảnh sản phẩm"></figure>
+            <figure><img src="#" alt="Ảnh sản phẩm"></figure>
+            <figure><img src="#" alt="Ảnh sản phẩm"></figure>
+        </section>
+
+        <article class="product-info"> <!-- article: thông tin sản phẩm là nội dung độc lập -->
+            <h1>Tên sản phẩm</h1> <!-- h1: tiêu đề chính -->
+            <p class="price">Giá</p> <!-- p: đoạn văn hiển thị giá -->
+            <p class="rating">Đánh giá sao</p> <!-- p: thông tin rating -->
+            <section class="description"> <!-- section: mô tả sản phẩm -->
+                <p>Mô tả sản phẩm</p>
+            </section>
+        </article>
+
+        <section class="specs"> <!-- section: nhóm thông số kỹ thuật -->
+            <h2>Thông số kỹ thuật</h2>
+            <table> <!-- table: dữ liệu dạng bảng -->
+                <thead> <!-- thead: tiêu đề bảng -->
+                    <tr>
+                        <th>Thông số</th>
+                        <th>Giá trị</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- tbody: dữ liệu chính -->
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="reviews"> <!-- section: khu vực đánh giá -->
+            <h2>Đánh giá</h2>
+            <article class="review"> <!-- article: mỗi bình luận độc lập -->
+                <p>Nội dung bình luận</p>
+            </article>
+        </section>
+
+    </section>
+
+    <aside> <!-- aside: nội dung phụ (sidebar) -->
+        <h2>Sản phẩm tương tự</h2>
+        <article class="related-product"> <!-- article: mỗi sản phẩm độc lập -->
+            <p>Tên sản phẩm</p>
+        </article>
+    </aside>
+
+</main>
+
+<footer> <!-- footer: phần cuối trang -->
+    <p>© 2026</p>
+</footer>
+
+Câu C2 — So sánh & Tranh luận
+
+Quan điểm “dùng <div> cho mọi thứ” là sai về mặt kỹ thuật và không phù hợp với phát triển web hiện đại.
+
+- Thứ nhất, về SEO: Semantic HTML giúp công cụ tìm kiếm hiểu rõ cấu trúc trang. Ví dụ, khi dùng <header>, <nav>, <main>, <article>, Google có thể xác định đâu là nội dung chính, đâu là menu. Nếu chỉ dùng <div>, toàn bộ trang trở thành “div soup”, khiến việc index kém hiệu quả và giảm thứ hạng tìm kiếm.
+
+- Thứ hai, về Accessibility (khả năng truy cập): Các thẻ semantic hỗ trợ screen reader (trình đọc màn hình). Người khiếm thị có thể dùng <nav> để nhảy nhanh tới menu, hoặc <main> để vào nội dung chính. Nếu dùng <div>, các công cụ hỗ trợ không hiểu được vai trò của từng phần, làm giảm trải nghiệm người dùng.
+
+- Ví dụ cụ thể: Một trang sản phẩm dùng <article> cho mỗi sản phẩm và <h1> cho tên sản phẩm sẽ giúp Google hiểu đây là nội dung chính → dễ lên top hơn so với việc chỉ dùng <div class="product">.
+
+- Tuy nhiên, <div> vẫn cần thiết trong một số trường hợp. Ví dụ: dùng <div> làm container để layout bằng CSS (Flexbox/Grid) hoặc nhóm các phần tử không có ý nghĩa nội dung cụ thể.
+
+Kết luận: Semantic HTML không chỉ giúp SEO tốt hơn mà còn cải thiện accessibility và maintain code. <div> chỉ nên dùng khi không có thẻ semantic phù hợp.
