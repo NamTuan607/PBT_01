@@ -1,3 +1,4 @@
+Phần A:
 Câu A1 — HTTP & Browser
 
 1. Khi nhập https://shopee.vn và nhấn Enter
@@ -92,6 +93,7 @@ Câu A3 — Block vs Inline
   <span> và <strong> là inline element
   → chỉ chiếm phần nội dung
   → nằm trên cùng một dòng nếu còn chỗ
+    
 3. Phân tích từng dòng
   <div>Hộp 1</div>
   → block → chiếm 1 dòng riêng
@@ -102,8 +104,8 @@ Câu A3 — Block vs Inline
   <span>Text C</span> + <strong>Text D</strong>
   → đều inline → cùng dòng → Text C Text D
   <div>Hộp 3</div>
-  → block → dòng mới
-
+  → block → dòng mới.
+  
 Câu A4 — Table
   
 1. Sự khác nhau giữa <thead>, <tbody>, <tfoot>
@@ -126,7 +128,9 @@ Câu A4 — Table
   Không linh hoạt như CSS (Flexbox, Grid)
    - Lý do 3: Code phức tạp, khó maintain
   Lồng nhiều <table>, <tr>, <td> → rối code
-  Khó sửa, khó debug
+  Khó sửa, khó debug.
+
+Phần C:
 
 Câu C1 — Thiết kế cấu trúc HTML
 
