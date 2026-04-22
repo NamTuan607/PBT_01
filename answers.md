@@ -182,3 +182,33 @@ Google hiểu cấu trúc trang tốt hơn khi dùng `<header>`, `<main>`,
 Screen reader cũng hoạt động tốt hơn.
 
 `<div>` vẫn dùng khi cần layout.
+
+## Bài B3 --- Debug HTML
+
+Lỗi 1: Dòng 1 — `<!DOCTYPE>` không đầy đủ chuẩn HTML5 — Sửa thành `<!DOCTYPE html>`.
+
+Lỗi 2: Dòng 2 — Thẻ `<html>` thiếu thuộc tính ngôn ngữ — Sửa thành `<html lang="vi">`.
+
+Lỗi 3: Dòng 4 — Thẻ `<title>` chưa đóng — Thêm `</title>`.
+
+Lỗi 4: Dòng 5 — `charset="utf8"` không đúng chuẩn khai báo phổ biến — Sửa thành `charset="UTF-8"`.
+
+Lỗi 5: Dòng 8 — Thẻ `<h1>` đóng sai (`<h1>` thay vì `</h1>`) — Sửa thành `<h1>Welcome to ShopTLU</h1>`.
+
+Lỗi 6: Dòng 12 — Thẻ `<a>` đầu tiên chưa đóng đúng — Sửa `<a href="home">Trang chủ<a>` thành `<a href="home">Trang chủ</a>`.
+
+Lỗi 7: Dòng 20 — Thuộc tính `src` của ảnh không đặt trong dấu ngoặc kép và ảnh thiếu `alt` — Sửa thành `<img src="iphone.jpg" alt="iPhone 16 Pro">`.
+
+Lỗi 8: Dòng 22 — Thẻ `<p>` và `<b>` lồng/đóng sai thứ tự (`</p></b>`) — Sửa thành `<p>Giá: <b>25.990.000đ</b></p>`.
+
+Lỗi 9: Dòng 27-36 — Bảng thiếu nhóm cấu trúc ngữ nghĩa (`<thead>`, `<tbody>`) — Bổ sung `<thead>` cho dòng tiêu đề và `<tbody>` cho dữ liệu.
+
+Lỗi 10: Dòng 29-30 — Hàng tiêu đề bảng dùng `<td>` thay vì `<th>` — Sửa hai ô tiêu đề thành `<th>`.
+
+Lỗi 11: Dòng 40-42 — Dùng thêm một `<main>` thứ hai là sai semantic (trang chỉ có một `main`) — Đổi khối này thành `<aside>`.
+
+Lỗi 12: Dòng 45 — Thẻ `<p>` trong footer chưa đóng — Thêm `</p>`.
+
+Lỗi 13: Dòng 47 trở đi — Thiếu thẻ đóng `</html>` — Bổ sung `</html>` ở cuối tài liệu.
+
+Lỗi 14: Dòng 12-13 — Link `href="home"`, `href="products"` là đường dẫn tương đối dễ lỗi ngữ cảnh trong bài mẫu — Sửa thành link rõ ràng (ví dụ `#home`, `#products` hoặc URL đầy đủ).
