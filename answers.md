@@ -212,3 +212,36 @@ Lỗi 12: Dòng 45 — Thẻ `<p>` trong footer chưa đóng — Thêm `</p>`.
 Lỗi 13: Dòng 47 trở đi — Thiếu thẻ đóng `</html>` — Bổ sung `</html>` ở cuối tài liệu.
 
 Lỗi 14: Dòng 12-13 — Link `href="home"`, `href="products"` là đường dẫn tương đối dễ lỗi ngữ cảnh trong bài mẫu — Sửa thành link rõ ràng (ví dụ `#home`, `#products` hoặc URL đầy đủ).
+
+## Bài B4 (15đ) --- Phân tích trang web thật (tiki.vn)
+
+Trang được chọn: `https://tiki.vn`
+
+### 1) Elements: Semantic HTML5
+
+Khi mở DevTools (F12) ở trang chủ tiki.vn và Inspect các vùng chính, có thể xác nhận:
+
+- Thẻ semantic dùng đúng:
+    - `<header>`: bao phần đầu trang (logo, ô tìm kiếm, tài khoản, giỏ hàng).
+    - `<main>`: bao khối nội dung chính (banner, danh mục, block sản phẩm).
+    - `<footer>`: bao phần chân trang (hỗ trợ khách hàng, liên kết, thông tin công ty).
+
+- Thẻ semantic dùng chưa tối ưu (nếu thấy trong DOM runtime của bạn):
+    - Khu menu điều hướng chính hiển thị như thanh danh mục nhưng không bọc bằng `<nav>`, chủ yếu là `<div>`.
+    - Các khối sản phẩm/lists có thể dùng nhiều `<div>` thay vì `<section>`/`<article>` cho từng cụm nội dung.
+
+Ảnh bạn tự chụp và lưu:
+- `screenshots/b4-elements-header-main-footer.png`
+- `screenshots/b4-elements-nonsemantic.png`
+
+### 2) Elements: Tìm `<table>`
+
+Trang chủ tiki.vn không có `<table>` trong khung nội dung chính.
+
+
+### 3) Elements: Tìm `<form>` (ô tìm kiếm)
+
+Trang chủ tiki.vn không có `<form>` trong khung nội dung chính.
+
+<input type="text">
+
