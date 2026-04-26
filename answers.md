@@ -96,92 +96,106 @@ Các bước xảy ra theo thứ tự:
 # 📝 PHẦN C
 
 ## Câu C1 --- HTML Structure
-<header> <!-- phần đầu trang -->
-    <nav> <!-- điều hướng chính -->
-        <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Sản phẩm</a></li>
+<header> <!-- header vì đây là phần đầu trang chứa nhận diện và điều hướng tổng -->
+    <nav aria-label="Dieu huong chinh"> <!-- nav vì đây là cụm liên kết điều hướng chính của website -->
+        <ul> <!-- ul vì menu là danh sách các mục điều hướng ngang cấp -->
+            <li> <!-- li vì mỗi mục menu là một phần tử danh sách riêng -->
+                <a href="#">Trang chu</a> <!-- a vì đây là liên kết điều hướng tới trang khác -->
+            </li>
+            <li> <!-- li vì mỗi mục menu là một phần tử danh sách riêng -->
+                <a href="#">Dien thoai</a> <!-- a vì đây là liên kết điều hướng tới danh mục -->
+            </li>
         </ul>
     </nav>
 </header>
 
-<nav aria-label="breadcrumb"> <!-- breadcrumb -->
-    <ol>
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Điện thoại</a></li>
-        <li>iPhone 16</li>
+<nav aria-label="breadcrumb"> <!-- nav vì breadcrumb cũng là điều hướng theo ngữ cảnh hiện tại -->
+    <ol> <!-- ol vì breadcrumb có thứ tự phân cấp từ cha đến con -->
+        <li> <!-- li vì mỗi cấp breadcrumb là một mục trong chuỗi phân cấp -->
+            <a href="#">Trang chu</a> <!-- a vì mục breadcrumb có thể quay lại cấp trước -->
+        </li>
+        <li> <!-- li vì mỗi cấp breadcrumb là một mục trong chuỗi phân cấp -->
+            <a href="#">Dien thoai</a> <!-- a vì mục breadcrumb có thể quay lại danh mục -->
+        </li>
+        <li aria-current="page"> <!-- li vì đây là mục cuối trong chuỗi breadcrumb -->
+            iPhone 16 <!-- text thuần vì trang hiện tại không cần là liên kết -->
+        </li>
     </ol>
 </nav>
 
-<main> <!-- nội dung chính -->
-
-    <section class="product-detail">
-
-        <section class="product-images">
-            <figure><img src="#" alt="Ảnh sản phẩm"></figure>
-            <figure><img src="#" alt="Ảnh sản phẩm"></figure>
-            <figure><img src="#" alt="Ảnh sản phẩm"></figure>
-            <figure><img src="#" alt="Ảnh sản phẩm"></figure>
-            <figure><img src="#" alt="Ảnh sản phẩm"></figure>
-        </section>
-
-        <article class="product-info">
-            <h1>Tên sản phẩm</h1>
-            <p class="price">Giá</p>
-            <p class="rating">Đánh giá sao</p>
-
-            <section class="description">
-                <p>Mô tả sản phẩm</p>
-            </section>
-        </article>
-
-        <section class="specs">
-            <h2>Thông số kỹ thuật</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Thông số</th>
-                        <th>Giá trị</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>...</td>
-                        <td>...</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="reviews">
-            <h2>Đánh giá</h2>
-            <article class="review">
-                <p>Nội dung bình luận</p>
-            </article>
-        </section>
-
+<main> <!-- main vì đây là vùng nội dung chính duy nhất của trang chi tiết sản phẩm -->
+    <section class="product-gallery"> <!-- section vì đây là một khối chức năng độc lập: khu vực ảnh sản phẩm -->
+        <h2>Anh san pham</h2> <!-- h2 vì đây là tiêu đề cấp 2 cho khối ảnh trong main -->
+        <figure> <!-- figure vì ảnh sản phẩm là nội dung minh họa độc lập -->
+            <img src="#" alt="Anh san pham 1"> <!-- img vì hiển thị hình ảnh sản phẩm -->
+        </figure>
+        <figure> <!-- figure vì ảnh sản phẩm là nội dung minh họa độc lập -->
+            <img src="#" alt="Anh san pham 2"> <!-- img vì hiển thị hình ảnh sản phẩm -->
+        </figure>
+        <figure> <!-- figure vì ảnh sản phẩm là nội dung minh họa độc lập -->
+            <img src="#" alt="Anh san pham 3"> <!-- img vì hiển thị hình ảnh sản phẩm -->
+        </figure>
+        <figure> <!-- figure vì ảnh sản phẩm là nội dung minh họa độc lập -->
+            <img src="#" alt="Anh san pham 4"> <!-- img vì hiển thị hình ảnh sản phẩm -->
+        </figure>
+        <figure> <!-- figure vì ảnh sản phẩm là nội dung minh họa độc lập -->
+            <img src="#" alt="Anh san pham 5"> <!-- img vì hiển thị hình ảnh sản phẩm -->
+        </figure>
     </section>
 
-    <aside>
-        <h2>Sản phẩm tương tự</h2>
-        <article class="related-product">
-            <p>Tên sản phẩm</p>
-        </article>
-    </aside>
+    <article class="product-info"> <!-- article vì đây là nội dung chi tiết hoàn chỉnh của một sản phẩm cụ thể -->
+        <h1>Ten san pham</h1> <!-- h1 vì đây là tiêu đề chính của trang chi tiết sản phẩm -->
+        <p class="price">Gia san pham</p> <!-- p vì giá là đoạn thông tin văn bản ngắn -->
+        <p class="rating">Danh gia sao</p> <!-- p vì điểm đánh giá là thông tin văn bản ngắn -->
+        <section class="description"> <!-- section vì mô tả là một tiểu khối nội dung riêng trong product-info -->
+            <h2>Mo ta</h2> <!-- h2 vì đây là tiêu đề cấp 2 cho phần mô tả -->
+            <p>Noi dung mo ta san pham</p> <!-- p vì mô tả là đoạn văn bản diễn giải -->
+        </section>
+    </article>
 
+    <section class="specifications"> <!-- section vì thông số kỹ thuật là một khối chức năng riêng -->
+        <h2>Thong so ky thuat</h2> <!-- h2 vì đây là tiêu đề cấp 2 của khối thông số -->
+        <table> <!-- table vì dữ liệu thông số có dạng hàng cột rõ ràng -->
+            <thead> <!-- thead vì nhóm hàng tiêu đề cột cho bảng -->
+                <tr> <!-- tr vì tiêu đề được trình bày theo một hàng -->
+                    <th>Thong so</th> <!-- th vì đây là ô tiêu đề cột -->
+                    <th>Gia tri</th> <!-- th vì đây là ô tiêu đề cột -->
+                </tr>
+            </thead>
+            <tbody> <!-- tbody vì nhóm các hàng dữ liệu nội dung bảng -->
+                <tr> <!-- tr vì mỗi thông số là một hàng dữ liệu -->
+                    <td>...</td> <!-- td vì đây là ô dữ liệu thường -->
+                    <td>...</td> <!-- td vì đây là ô dữ liệu thường -->
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="reviews"> <!-- section vì phần đánh giá là một khối nội dung riêng -->
+        <h2>Danh gia va binh luan</h2> <!-- h2 vì đây là tiêu đề cấp 2 cho khối đánh giá -->
+        <article class="review-item"> <!-- article vì mỗi bình luận là một đơn vị nội dung độc lập -->
+            <p>Noi dung binh luan</p> <!-- p vì bình luận là nội dung văn bản -->
+        </article>
+    </section>
+
+    <aside class="related-products"> <!-- aside vì sản phẩm tương tự là nội dung bổ trợ cho nội dung chính -->
+        <h2>San pham tuong tu</h2> <!-- h2 vì đây là tiêu đề cho khối nội dung bổ trợ -->
+        <ul> <!-- ul vì danh sách sản phẩm tương tự là tập hợp các mục ngang cấp -->
+            <li> <!-- li vì mỗi sản phẩm tương tự là một mục trong danh sách -->
+                <a href="#">San pham A</a> <!-- a vì mục sản phẩm tương tự dẫn đến trang chi tiết khác -->
+            </li>
+        </ul>
+    </aside>
 </main>
 
-<footer>
-    <p>© 2026</p>
+<footer> <!-- footer vì đây là phần chân trang chứa thông tin kết trang -->
+    <p>Thong tin chan trang</p> <!-- p vì nội dung chân trang thường là đoạn thông tin văn bản -->
 </footer>
 ## Câu C2 --- Tranh luận
 
-Semantic HTML giúp SEO tốt hơn và hỗ trợ accessibility.\
-Google hiểu cấu trúc trang tốt hơn khi dùng `<header>`, `<main>`,
-`<article>`.\
-Screen reader cũng hoạt động tốt hơn.
+Noi dung tranh luan cho rang chi dung div va class la du khong dung trong thuc te ky thuat hien dai. Ly do thu nhat la SEO: cong cu tim kiem phan tich cau truc trang dua tren y nghia the, vi vay header, nav, main, article, section giup bot tim kiem nhan dien nhanh khu vuc noi dung chinh, dieu huong va cac khoi doc lap. Neu dung div cho tat ca, bot van co the index, nhung mat them ngu canh, dan den chat luong hieu trang va kha nang hien thi rich result kem hon. Ly do thu hai la Accessibility: screen reader va cong nghe ho tro dua vao semantic landmark de nguoi khuyet tat nhay nhanh den nav, main, footer ma khong phai nghe toan bo trang tu dau den cuoi. Do la loi ich truc tiep, do duoc, khong phai ly thuyet.
 
-`<div>` vẫn dùng khi cần layout.
+Vi du cu the: tren trang chi tiet san pham, neu dung nav aria-label="breadcrumb" ket hop ol va li, nguoi dung dung screen reader se nghe dung thu tu Trang chu > Dien thoai > iPhone 16 va co the quay lai cap truoc nhanh hon. Neu thay bang cac div, thu tu va muc dich dieu huong de bi mo ho. Tuy nhien, div van rat phu hop trong mot so truong hop, nhu wrapper phuc vu layout voi grid/flex, nhom cac thanh phan khong co y nghia noi dung rieng (vi du khung can le, container responsive, overlay de tao hieu ung). Ket luan: semantic HTML khong thay the hoan toan div, ma bo sung y nghia dung cho dung cho, giup he thong, cong cu tim kiem va nguoi dung deu huong loi.
 
 ## Bài B3 --- Debug HTML
 
